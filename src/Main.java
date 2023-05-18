@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,20 +11,27 @@ public class Main {
         String a = scanner.nextLine();
         String b = scanner.nextLine();
 
-        double a1 = Double.parseDouble(a);
-        double b1 = Double.parseDouble(b);
+        try {
+            double a1 = Double.parseDouble(a);
 
-        if (a1 % 1 == 0) {
-            System.out.println(a1 + " Valid");
-        } else {
-            System.out.println(a1 + " Not Valid");
+            if (a1 % 1 == 0) {
+                System.out.println(a1 + " Valid");
+            } else {
+                System.out.println(a1 + " Not Valid");
+            }
+        }catch (NumberFormatException e) {
+            System.out.println(a + " Not Valid!");
         }
+        try{
+            double b1 = Double.parseDouble(b);
 
-        if (b1 % 1 == 0) {
-            System.out.println(b1 + " Valid");
-        } else {
-            System.out.println(b1 + " Not Valid");
+            if (b1 % 1 == 0) {
+                System.out.println(b1 + " Valid");
+            } else {
+                System.out.println(b1 + " Not Valid");
+            }
+        }catch (NumberFormatException e) {
+            System.out.println(b + " Not Valid!");
         }
-
     }
 }
